@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block nav %}
+<li class="nav-item">
+    <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/aboutus">Members</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/projects">Research Projects</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/publications">Publications</a>
+</li>
+<li class="nav-item active" style="text-align:center">
+    <a class="nav-link" href="/sample">Termite Identification</br>Service</a>
+</li>
+{% endblock %}
+
+{% block content1 %}
+<hr>{% endblock %}
+
+{% block content2 %}
+<h2 style="text-align:center; color:white">User Login</h2>
+<div class="container p-3 my-3 bg-dark text-white center" style="width:300px">
+    <form action="{{ url_for('login') }}" method="POST" style="text-align:left; color:white">
+        <strong>E-mail</strong><input type="text" name="Email" style="width: 100%"
+                                      placeholder="Your E-mail address.."/></br>
+        <strong>Password</strong><input type="text" name="Password" style="width: 100% " placeholder="Your password.."/><br>
+        <p style="text-align:center; color:Tomato"> {% block contentz %}{% endblock %}</p>
+        <input type="submit" value="Login"
+               style="width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
+    </form>
+    <form action="{{ url_for('register') }}" style="text-align:left; color:white">
+        <input type="submit" value="Forgot Password"
+               style="text-align:center; width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
+    </form>
+    <form action="{{ url_for('register') }}" style="text-align:left; color:white">
+        <input type="submit" value="Register" href="/"
+               style="text-align:center; width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
+    </form>
+</div>{% endblock %}
