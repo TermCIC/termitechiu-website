@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content1 %}
+<div style="color:white; font-size: 20px; margin-top: 2.5%; margin-left: 35%; margin-right: 2.5%">
+    <form action="{{ url_for('edit') }}" method="POST">
+        <table>
+            <tr>
+                <td style="text-align: right">
+                    Name:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Name" name="Name" type="text" value="{{user_name}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    E-mail:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_email}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Company:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Company" name="Company" type="text"
+                           value="{{user_company}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Province:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Province" name="Province" type="text"
+                           value="{{user_province}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    City:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="City" name="City" type="text" value="{{user_city}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Address:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Address" name="Address" type="text"
+                           value="{{user_address}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Phone Number:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Phone" name="Phone" type="text"
+                           value="{{user_phone}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Fax:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input class="text-box single-line valid" id="Fax" name="Fax" type="text" value="{{user_fax}}">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Termite Collection:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_collection}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <input type="submit" class="btn btn-outline-danger" style="float:left">
+                    <a type="button" class="btn btn-outline-success" style="float:left" href="/member">
+                        Cancel </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

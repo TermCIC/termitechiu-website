@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content1 %}
+<div class="bg-dark text-white rounded" style="border-style: dashed; border-color: black">
+
+    <div style="color:white; font-size: 20px; margin-top: 2.5%; margin-left: 35%; margin-right: 2.5%">
+        <table>
+            <tr>
+                <td style="text-align: right">
+                    Name:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_name}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    E-mail:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_email}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Company:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_company}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Province:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_province}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    City:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_city}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Address:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_address}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Phone Number:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_phone}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Fax:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_fax}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    Termite Collection:
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    {{user_collection}}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                </td>
+                <td style="width: 2%">
+                </td>
+                <td style="text-align: left">
+                    <a type="button" class="btn btn-outline-danger btn-lg" style="float:left; width:25%" href="/edit">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

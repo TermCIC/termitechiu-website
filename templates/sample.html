@@ -1,42 +1,144 @@
 {% extends "base.html" %}
-{% block nav %}
-<li class="nav-item">
-    <a class="nav-link" href="/">Home</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/aboutus">Members</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/projects">Research Projects</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/publications">Publications</a>
-</li>
-<li class="nav-item active" style="text-align:center">
-    <a class="nav-link" href="/sample">Termite Identification</br>Service</a>
-</li>
-{% endblock %}
-
-{% block content1 %}
-<hr>{% endblock %}
-
 {% block content2 %}
-<h2 style="text-align:center; color:white">User Login</h2>
-<div class="container p-3 my-3 bg-dark text-white center" style="width:300px">
-    <form action="{{ url_for('login') }}" method="POST" style="text-align:left; color:white">
-        <strong>E-mail</strong><input type="text" name="Email" style="width: 100%"
-                                      placeholder="Your E-mail address.."/></br>
-        <strong>Password</strong><input type="text" name="Password" style="width: 100% " placeholder="Your password.."/><br>
-        <p style="text-align:center; color:Tomato"> {% block contentz %}{% endblock %}</p>
-        <input type="submit" value="Login"
-               style="width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
-    </form>
-    <form action="{{ url_for('register') }}" style="text-align:left; color:white">
-        <input type="submit" value="Forgot Password"
-               style="text-align:center; width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
-    </form>
-    <form action="{{ url_for('register') }}" style="text-align:left; color:white">
-        <input type="submit" value="Register" href="/"
-               style="text-align:center; width: 100%;padding: 16px 32px;color: white; font-weight: bold; background-color: DarkGreen;"/><br>
-    </form>
-</div>{% endblock %}
+<div class="bg-dark text-white rounded" style="border-style: dashed; border-color: black">
+    <table style="margin-left: 0%; margin-right: 0%">
+        <td>
+            <div class="container p-3 my-3 bg-dark text-white center rounded" style="width:600px">
+                <h2 style="text-align:center; color:white">Sample Information</h2>
+                <form action="{{ url_for('submit_sample') }}" method="POST" style="text-align:left; color:white">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Collector">Collector Name</label>
+                            <input type="collector" class="form-control" id="collector" name="collector"
+                                   placeholder="who collected the sample.." value="{{collector}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="select_habitat">Where you collect the sample?</label>
+                            <select class="form-control" id="select_habitat" name="habitat">
+                                <option selected="selected">{{collection_habitat}}</option>
+                                <option>Indoor</option>
+                                <option>Outdoor, on the wall</option>
+                                <option>Outdoor, surrounding house</option>
+                                <option>Outdoor, in the field</option>
+                                <option>Outdoor, on vehicle</option>
+                                <option>Outdoor, on boat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="select_year">Year</label>
+                            <select class="form-control" id="select_year" name="year">
+                                <option selected="selected">{{collection_year}}</option>
+                                <option>{{current_year-1}}</option>
+                                <option>{{current_year-2}}</option>
+                                <option>{{current_year-3}}</option>
+                                <option>{{current_year-4}}</option>
+                                <option>{{current_year-5}}</option>
+                                <option>{{current_year-6}}</option>
+                                <option>{{current_year-7}}</option>
+                                <option>{{current_year-8}}</option>
+                                <option>{{current_year-9}}</option>
+                                <option>{{current_year-10}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="select_month">Month</label>
+                            <select class="form-control" id="select_month" name="month">
+                                <option selected="selected">{{collection_month}}</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="select_date">Date</label>
+                            <select class="form-control" id="select_date" name="date">
+                                <option selected="selected">{{collection_day}}</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="Province">Province</label>
+                            <input type="province" class="form-control" id="province" name="province"
+                                   value="{{collection_province}}"
+                                   placeholder="where the sample collected..">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="City">City</label>
+                            <input type="city" class="form-control" id="city" name="city" value="{{collection_city}}"
+                                   placeholder="where the sample collected..">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <input type="address" class="form-control" id="address" name="address"
+                               value="{{collection_address}}"
+                               placeholder="where the sample collected..">
+                    </div>
+                    <div style="text-align: center">
+                        <input class="btn btn-primary btn-lg" type="submit" name="submit_button" value="Check Location">
+                        <input class="btn btn-success btn-lg" type="submit" name="submit_button" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </td>
+        <td>
+            <div class="container p-3 my-3 bg-dark text-white center rounded" style="width:600px">
+                <iframe
+                        width="550"
+                        height="450"
+                        style="border:0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDkD4Oow18t53T8SPRB7SFsBcwWTaHfF6I
+                    &q={{collection_latitude}},{{collection_longitude}}
+                    &language=en&zoom=15">
+                </iframe>
+                Current Location: {{collection_latitude}},{{collection_longitude}}
+            </div>
+        </td>
+    </table>
+</div>
+{% endblock %}

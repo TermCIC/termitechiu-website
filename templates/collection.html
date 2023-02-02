@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content1 %}
+<div class="bg-dark text-white rounded" style="border-style: dashed; border-color: black">
+
+    <div class="table-responsive">
+        <table class="table table-striped" style="text-align:center; color:white">
+            <thead>
+            <tr class="bg-dark">
+                {% for header in headings %}
+                <th> {{ header }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in data %}
+            <tr class="bg-transparent">
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}
