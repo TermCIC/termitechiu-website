@@ -11,15 +11,15 @@ from bs4 import BeautifulSoup
 geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?"
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "12345678"
-app.config['GOOGLEMAPS_KEY'] = "AIzaSyDkD4Oow18t53T8SPRB7SFsBcwWTaHfF6I"
+app.config['GOOGLEMAPS_KEY'] = ""
 
 mail_settings = {
     "MAIL_SERVER": 'smtp.gmail.com',
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'tim77918@gmail.com',
-    "MAIL_PASSWORD": 'lbggyxareffzwvpl'
+    "MAIL_USERNAME": '',
+    "MAIL_PASSWORD": ''
 }
 
 app.config.update(mail_settings)
